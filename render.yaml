@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: pouk-immanuel-api
+    runtime: node
+    region: singapore
+    plan: starter
+    rootDir: server
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    disk:
+      name: uploads
+      mountPath: /var/data/uploads
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "1"
+      - key: UPLOAD_DIR
+        value: /var/data/uploads
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
