@@ -1,7 +1,7 @@
 import { router } from 'expo-router';
 import { View } from 'react-native';
 import { ContactInfo, EventCard } from '@/components/church';
-import { ChurchHeader, FeatureMenuCard, HeroSection } from '@/components/home';
+import { ChurchHeader, FeatureMenuCard, HeroSection, VerseCard } from '@/components/home';
 import { Screen } from '@/components/Screen';
 import { EmptyState, ErrorState, QueryView, Skeleton } from '@/components/states';
 import { Button, Card, Section } from '@/components/ui';
@@ -26,6 +26,7 @@ export default function HomeScreen() {
       <ChurchHeader name={p?.name} logoUrl={p?.logoUrl} />
 
       <HeroSection name={p?.name || DEFAULT_NAME} welcome={p?.welcomeMessage} imageUrl={p?.heroImageUrl || p?.photoUrl} logoUrl={p?.logoUrl} />
+      <VerseCard />
 
       <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space.md }}>
         <FeatureMenuCard icon="business-outline" label="Profil Gereja" hint="Identitas dan kontak" onPress={() => router.push('/profile')} />

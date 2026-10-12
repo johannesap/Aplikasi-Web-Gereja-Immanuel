@@ -3,6 +3,8 @@ export const colors = {
   primary: '#5B2A86',
   primaryDeep: '#3B185F',
   primaryLight: '#F2EAF8',
+  gold: '#C9A227', // aksen liturgis; hanya untuk garis/ikon, jangan untuk teks di latar putih (kontras rendah)
+  goldLight: '#FBF4DE',
   white: '#FFFFFF',
   softBg: '#FAF8FC',
   text: '#241C2B',
